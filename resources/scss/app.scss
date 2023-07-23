@@ -1,1 +1,220 @@
-@import "~bootstrap/scss/bootstrap";
+@use './partials/variables.scss' as *;
+@use './partials/mixins.scss' as *;
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+}
+
+ul{
+    list-style-type: none;
+}
+
+ul li a{
+    text-decoration: none;
+}
+
+.container{
+    width: 1200px;
+}
+
+header{
+    @include marginAuto;
+    height: 7rem;
+    @include flex(row, space-between, center);
+    img{
+        height: 70%;
+    }
+    ul{
+        @include flex();
+        height: 100%;
+        li{
+            @include flex();
+            height: 100%;
+            margin-left: 2rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: $fontSizeSmall;
+        }
+        li:hover{
+            @include flex();
+            height: 100%;
+            color: $blueColor;
+            border-bottom: 3px solid $blueColor;
+        }
+    }
+}
+
+main{
+    @include flex(row,start,center);
+    background-color: #1c1c1c;
+    color: white;
+    height: 75vh;
+    div{
+        @include marginAuto;
+        display: flex;
+        flex-wrap: wrap;
+        button{
+            @include marginAuto;
+            padding: 0.7rem 2.2rem;
+            background-color: $blueColor;
+            border-radius: 0;
+            border: 0px;
+            color: white;
+            text-transform: uppercase;
+            font-size: $fontSizeMedium;
+            font-weight: 500;
+        }
+        button:hover{
+            background-color: #1663ac;
+        }
+    }
+}
+div.jumbotron{
+    height: 40vh;
+    background-image: url(../assets/img/jumbotron.jpg);
+    background-size: cover;
+    position: relative;
+    div.banner{
+        padding: 1rem 2.5rem;
+        background-color: $blueColor;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 20rem;
+    }
+}
+
+nav{
+    height: 9rem;
+    background-color: $blueColor;
+    color: white;
+    ul{
+        height: 100%;
+        @include marginAuto();
+        @include flex(row,space-around,center);
+        li{
+            @include flex;
+            img{
+                height: 50px;
+                margin-right: 1rem;
+            }
+            h2{
+                text-transform: uppercase;
+                font-size: $fontSizeSmall;
+            }
+        }
+    }
+}
+
+div.jumbotron{
+    height: 40vh;
+    background-image: url(../img/jumbotron.jpg);
+    background-size: cover;
+    position: relative;
+    div.banner{
+        padding: 1rem 2.5rem;
+        background-color: $blueColor;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 600;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 20rem;
+    }
+}
+
+div.card{
+    width: calc(100% / 6);
+    margin-bottom: 3rem;
+    padding: 0.5rem;
+    img{
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        object-position: 0 0;
+    }
+    h2{
+        margin-top: 1rem;
+        text-transform: uppercase;
+        font-size: $fontSizeSmall;
+    }
+}
+
+footer{
+    height: 28rem;
+    background-image: url('../img/footer-bg.jpg');
+    background-size: contain;
+    section.links-list{
+        height: 100%;
+        overflow: hidden;
+        @include flex(row,space-between,center);
+        @include marginAuto;
+        div{
+            display: flex;
+            align-items: flex-start;
+            color: white;
+            ul{
+                height: 100%;
+                margin-right: 1.5rem;
+                li{
+                    padding-bottom: 0.5rem;
+                    h2{
+                        text-transform: uppercase;
+                        font-size: $fontSizeBig;
+                        margin-bottom: 0.8rem;
+                    }
+
+                    a{
+                        font-size: $fontSizeMedium;
+                        color: gray;
+                    }
+                    a:hover{
+                        color: white;
+                    }
+                }
+            }
+        }
+        img{
+            height: 600px;
+        }
+    }
+}
+
+section.sign-in{
+    background-color: #303030;
+    height: 7rem;
+    div{
+        height: 100%;
+        @include marginAuto;
+        @include flex(row,space-between,center);
+        button{
+            padding: 0.5rem 1rem;
+            border-radius: 0;
+            border: 3px solid $blueColor;
+            background-color: #303030; 
+            color: white;
+            text-transform: uppercase;
+            font-size: $fontSizeMedium;
+        } 
+
+        ul{
+            @include flex(row,center,center);
+            li{
+                margin-right: 0.5rem;
+                h2{
+                    font-size: $fontSizeMedium;
+                    text-transform: uppercase;
+                    color: $blueColor;
+                }
+            }
+        }
+    }
+}

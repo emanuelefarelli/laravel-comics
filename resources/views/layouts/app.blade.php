@@ -13,11 +13,14 @@
 <body>
     @include('partials.header')
 
-    <main>
-        @yield('main-content')
-    </main>
+    @include('partials.main')
+
+    @include('partials.nav')
 
     @include('partials.footer')
+
+    @include('partials.signIn')
+
     @yield('custom-scripts-tail')
 </body>
-</html>
+</html>                                                  -

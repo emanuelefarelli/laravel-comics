@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+
+    $headerLinks = config('db.linkList');
+    $comicsCards = config('db.comicsList');
+    $NavLinks = config('db.navLinkList');
+    $FooterLinkDcComics = config('db.linkFooterDcComics');
+    $FooterLinkShop = config('db.linkFooterShop');
+    $FooterLinkDclist = config('db.linkFooterDclist');
+    $FooterLinkSites = config('db.linkFooterSitesList');
+
+
+    return view('welcome',compact('headerLinks','comicsCards','NavLinks','FooterLinkDcComics','FooterLinkShop','FooterLinkDclist','FooterLinkSites'));
 });
